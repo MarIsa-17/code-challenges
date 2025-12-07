@@ -13,7 +13,12 @@ Escribe una función llamada raisedToTheThird que tome un array de números y de
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Código de solución aquí...
+  const nuevoArray = [];
+  arr.forEach((num)=>{
+    const numeroPotencia = Math.pow(num,3);
+    nuevoArray.push(numeroPotencia)
+  })
+  return nuevoArray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +28,8 @@ Escribe una función llamada addOne que, dado un array de números, use map para
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Código de solución aquí...
+  const aumentados = arr.map(num=> num+1)
+  return aumentados
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +39,8 @@ Escribe una función llamada addQuestion que, dado un array de cadenas, use map 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Código de solución aquí...
+  const nuevaCadena = arr.map(str => str+"?")
+  return nuevaCadena
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +54,13 @@ Por ejemplo, twoToThe([1,2,3]) devuelve [2,4,8] porque 2 ^ 1 = 2, 2 ^ 2 = 4, y 2
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Código de solución aquí...
+  const nuevo =[];
+  for(let i=0; i<arr.length; i++){
+    const exponente = arr[i]
+   const potencia = Math.pow(2,exponente)
+   nuevo.push(potencia)
+  }
+  return nuevo
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +70,12 @@ Escribe una función llamada forEachTwoToThe que produzca la misma salida que tu
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Código de solución aquí...
+  const nuevo = [];
+  arr.forEach((num)=>{
+    const potencia = Math.pow(2,num)
+    nuevo.push(potencia)
+  })
+  return nuevo
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +85,8 @@ Escribe una función llamada mapTwoToThe que produzca la misma salida que tu fun
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Código de solución aquí...
+  const potencia = arr.map(num=> Math.pow(2,num))
+  return potencia
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +100,8 @@ Por ejemplo: charCode(['h','i']) devuelve [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Código de solución aquí...
+  const nuevoArray = arr.map((str=> str.charCodeAt(0)))
+  return nuevoArray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,7 +115,16 @@ Por ejemplo: evenOdd([1,2,3]) devuelve ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Código de solución aquí...
+  const nuevaCadena = arr.map((num)=>{
+    if(typeof num !== 'number'|| !Number.isInteger(num)){
+      return "N/A"
+    } else if(num%2===0){
+      return "even"
+    } else{
+      return "odd"
+    }
+  })
+  return nuevaCadena
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +170,10 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Código de solución aquí...
+  const nombreHabilidad = arr.map(abilityObj =>{
+    return abilityObj.ability.name
+  })
+  return nombreHabilidad
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -188,7 +220,15 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Código de solución aquí...
+  const nuevoArray = arr.map(starsObj =>{
+    const total = starsObj.effort + starsObj.baseStat
+    const nombre = starsObj.stat.name
+    return {
+      name:nombre,
+      total: total
+    }
+  })
+  return nuevoArray
 };
 
 /* ------------------------------------------------------------------------------------------------
